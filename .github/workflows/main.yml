@@ -1,0 +1,49 @@
+name: Build GT ELEKTRONIK v030 Paradise Full System UF2
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Install ARM toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential git zip
+
+      - name: Checkout Pico SDK
+        run: |
+          git clone --depth 1 https://github.com/raspberrypi/pico-sdk.git
+          cd pico-sdk
+          git submodule update --init --recursive
+
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DPICO_SDK_PATH=$PWD/pico-sdk -DPICO_BOARD=pico
+
+      - name: Build
+        run: cmake --build build
+
+      - name: Prepare final package
+        run: |
+          mkdir -p artifact/02_UF2_HAZIR_YUKLE
+          cp build/player1_mouse.uf2 artifact/02_UF2_HAZIR_YUKLE/player1_mouse.uf2
+          cp build/player2_mouse.uf2 artifact/02_UF2_HAZIR_YUKLE/player2_mouse.uf2
+          cp build/controller.uf2 artifact/02_UF2_HAZIR_YUKLE/controller.uf2
+          cp -r PROGRAM artifact/PROGRAM
+          cp 01_GT_PARADISE_FULL_PANEL_AC.cmd artifact/
+          cp 02_GEREKIRSE_PYSERIAL_KUR.cmd artifact/
+          cp OKU_BENI.txt artifact/
+          cp -r 03_TALIMAT artifact/03_TALIMAT
+          cd artifact && zip -r ../GT_ELEKTRONIK_v030_PARADISE_FULL_SYSTEM_HAZIR.zip .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GT_ELEKTRONIK_v030_PARADISE_FULL_SYSTEM_HAZIR
+          path: GT_ELEKTRONIK_v030_PARADISE_FULL_SYSTEM_HAZIR.zip
