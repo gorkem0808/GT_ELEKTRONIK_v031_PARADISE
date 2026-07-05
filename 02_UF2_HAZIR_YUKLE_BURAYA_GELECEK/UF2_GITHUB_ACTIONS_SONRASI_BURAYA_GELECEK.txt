@@ -1,0 +1,1 @@
+GitHub Actions bitince indirilen artifact içindeki UF2 dosyaları burada olacak.

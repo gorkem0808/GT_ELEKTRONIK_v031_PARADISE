@@ -1,0 +1,61 @@
+GT ELEKTRONIK v030 - PARADISE LOST / TEKNOPARROT TAM SİSTEM
+
+Bu paket sistemi toparlanmış son mantıkla kurar:
+
+1) Player 1 Pico = USB Mouse + PC Kalibrasyon Serial
+   Windows cihaz adı: GT PARADISE PLAYER 1 MOUSE
+   Görev: P1 nişangah/mouse hareketi
+
+2) Player 2 Pico = USB Mouse + PC Kalibrasyon Serial
+   Windows cihaz adı: GT PARADISE PLAYER 2 MOUSE
+   Görev: P2 nişangah/mouse hareketi
+
+3) Controller Pico = USB Klavye + PC Test Serial
+   Windows cihaz adı: GT PARADISE CONTROLLER KEYBOARD
+   Görev: GP tuşları, kredi, start, röle
+
+ÖNEMLİ:
+- Oyun oynarken PC programı açık kalmak zorunda değildir.
+- PC programı sadece cihaz testi, tuş testi, röle testi, PC kalibrasyon ve oyun başlatma içindir.
+- Kalibrasyon Pico flash hafızasına kaydedilir. PC kapanınca silinmez.
+- GP19 DIP kapalı olsa bile PC program RAW okuyabilir; GP19 sadece oyuna mouse hareketi göndermeyi aç/kapat yapar.
+
+CONTROLLER TUŞLAR:
+GP0 = keyboard 0
+GP1 = keyboard 1
+GP2 = keyboard 2
+GP3 = keyboard 3
+GP4 = keyboard 4
+GP5 = keyboard 5
+GP6 = keyboard 6  / P1 trigger / P1 röle tetik
+GP7 = keyboard 7  / P2 trigger / P2 röle tetik
+GP8 = keyboard 8  / kredi coin
+GP9 = keyboard 9  / start
+
+RÖLE:
+Controller Pico GP26 = P1 röle çıkışı
+Controller Pico GP27 = P2 röle çıkışı
+
+MOUSE PICO:
+GP26 = X pot orta uç
+GP27 = Y pot orta uç
+GP19 = DIP switch -> GND olursa oyun mouse aktif
+GP18 = donanımsal kalibrasyon butonu
+
+PC PROGRAM:
+01_GT_PARADISE_FULL_PANEL_AC.cmd
+
+PC program özellikleri:
+- P1/P2/Controller otomatik bulur
+- P1/P2 RAW ve HID canlı gösterir
+- GP19 DIP aktif/pasif gösterir
+- Controller GP0-GP9 tuş lambalarını gösterir
+- Röle test eder
+- PC üzerinden 4 köşe kalibrasyon yapar
+- Filtre ve X/Y ters çevirme kaydeder
+- TeknoParrot / Paradise Lost başlatır
+
+UF2 YÜKLEME:
+player1_mouse.uf2 -> Player 1 Pico
+player2_mouse.uf2 -> Player 2 Pico
+controller.uf2    -> Controller Pico

@@ -1,0 +1,37 @@
+GT ELEKTRONIK v031 - BAŞTAN TEK PAKET KURULUM
+
+BU PAKETTE TEK SİSTEM VAR:
+- Player 1 Pico = GT PARADISE PLAYER 1 MOUSE
+- Player 2 Pico = GT PARADISE PLAYER 2 MOUSE
+- Controller Pico = GT PARADISE CONTROLLER KEYBOARD
+
+OYUNDA:
+- PC programı açık olmak zorunda değil.
+- P1/P2 mouse gibi çalışır.
+- Controller klavye gibi çalışır.
+
+PC PROGRAM:
+- 01_GT_PARADISE_FULL_PANEL_AC.cmd
+- Cihaz testi, tuş testi, röle testi, PC kalibrasyon ve TeknoParrot başlatma içindir.
+
+GITHUB'A YÜKLERKEN:
+ZIP'i aç.
+Açılan klasörün İÇİNDEKİ dosyaları yükle.
+Klasörün kendisini yükleme.
+
+GitHub ana sayfasında direkt şunlar görünmeli:
+- CMakeLists.txt
+- firmware
+- PROGRAM
+- .github
+- OKU_BENI.txt
+- 01_GT_PARADISE_FULL_PANEL_AC.cmd
+- 02_GEREKIRSE_PYSERIAL_KUR.cmd
+
+Eğer .github görünmezse:
+GitHub'da Add file > Create new file
+dosya adı:
+.github/workflows/build_uf2.yml
+
+İçerik:
+GITHUB_WORKFLOW_ELLE_EKLE/build_uf2.yml dosyasının içeriğini komple kopyala.

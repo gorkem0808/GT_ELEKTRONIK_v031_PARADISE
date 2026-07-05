@@ -1,0 +1,25 @@
+SİSTEM NASIL ÇALIŞIR?
+
+OYUN MODU:
+- 3 Pico USB'ye takılır.
+- Player 1 Pico mouse gibi çalışır.
+- Player 2 Pico ikinci mouse gibi çalışır.
+- Controller Pico klavye gibi çalışır.
+- PC programı kapalı olabilir.
+
+SETUP / TEST MODU:
+- PC program açılır.
+- Cihazları Tara / Yenile basılır.
+- P1/P2 RAW değerleri görülür.
+- Controller GP0-GP9 lambaları görülür.
+- PC kalibrasyon yapılır.
+- Kaydet komutu Pico flash hafızasına yazar.
+
+GP19 DIP:
+- GP19 GND = mouse oyuna hareket gönderir.
+- GP19 açık = mouse oyuna hareket göndermez.
+- PC program RAW okumaya devam eder.
+
+GP18:
+- P1/P2 üzerinde donanımsal kalibrasyon butonu.
+- PC program olmadan da kalibrasyon yapılabilir.

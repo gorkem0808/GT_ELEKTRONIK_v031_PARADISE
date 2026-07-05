@@ -1,0 +1,31 @@
+GITHUB İLE UF2 OLUŞTURMA
+
+1) GitHub repo aç.
+2) Bu ZIP içindeki dosyaları repo köküne yükle.
+3) Repo kökünde şunlar görünmeli:
+   CMakeLists.txt
+   firmware
+   .github
+   PROGRAM
+   OKU_BENI.txt
+
+4) Actions sekmesine gir.
+5) Build GT ELEKTRONIK v030 Paradise Full System UF2 çalışsın.
+6) Yeşil tik olunca Artifacts bölümünden indir:
+   GT_ELEKTRONIK_v030_PARADISE_FULL_SYSTEM_HAZIR
+
+İçinde şunlar çıkacak:
+player1_mouse.uf2
+player2_mouse.uf2
+controller.uf2
+PC programı
+talimatlar
+
+Eğer .github klasörü yüklenmezse:
+GitHub'da Add file > Create new file yap.
+Dosya adı:
+.github/workflows/build_uf2.yml
+
+İçerik için bu paketteki:
+GITHUB_WORKFLOW_ELLE_EKLE/build_uf2.yml
+dosyasını açıp kopyala.

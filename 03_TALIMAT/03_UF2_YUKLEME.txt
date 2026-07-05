@@ -1,0 +1,14 @@
+UF2 YÜKLEME
+
+Her Pico'yu tek tek yükle:
+
+PLAYER 1 PICO:
+BOOTSEL basılı tut -> USB tak -> RPI-RP2 açılınca player1_mouse.uf2 kopyala.
+
+PLAYER 2 PICO:
+BOOTSEL basılı tut -> USB tak -> RPI-RP2 açılınca player2_mouse.uf2 kopyala.
+
+CONTROLLER PICO:
+BOOTSEL basılı tut -> USB tak -> RPI-RP2 açılınca controller.uf2 kopyala.
+
+Yükleme bittikten sonra 3 Pico'yu normal tak.
